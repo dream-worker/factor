@@ -1,0 +1,9 @@
+{
+  "name": "lanlan-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^0.4.0"
+  }
+}
