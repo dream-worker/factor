@@ -1,0 +1,62 @@
+<html lang="en-US">
+  <head>
+    <title>记录杂七杂八的factors</title>
+    <meta name="description" content="记录杂七杂八的factors">
+    <link rel="stylesheet" href="/_assets/style.04b6c102.css">
+    <link rel="modulepreload" href="/_assets/common-7f73fe28.js">
+    <link rel="modulepreload" href="/_assets/leetcode_two-sum.md.344abfe2.lean.js">
+    <link rel="modulepreload" href="/_assets/app.1b48c33f.js">
+    
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header><!--[--><a class="title" aria-label="记录杂七杂八的factors, back to home" href="/"><!----><span>记录杂七杂八的factors</span></a><!----><!--]--></header><aside><div class="sidebar"><ul><!--[--><!--]--></ul></div></aside><main><div class="content"><div><ol><li>两数之和</li></ol><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p><p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍</p><p>来源：力扣（LeetCode） 链接：<a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener noreferrer">https://leetcode-cn.com/problems/two-sum</a> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p><p>示例:</p><div class="language-js"><pre><code>给定 nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target <span class="token operator">=</span> <span class="token number">9</span>
+
+因为 nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">7</span> <span class="token operator">=</span> <span class="token number">9</span>
+所以返回 <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+</code></pre></div><p>解答：</p><div class="language-js"><pre><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */</span>
+
+<span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> target <span class="token operator">=</span> <span class="token number">9</span>
+<span class="token keyword">var</span> goodNums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">var</span> firstVal<span class="token punctuation">,</span>firstIndex<span class="token punctuation">,</span>secodeVal<span class="token punctuation">,</span>secodeIndex
+<span class="token keyword">var</span> <span class="token function-variable function">twoSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums<span class="token punctuation">,</span> target</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// 过滤大于target的数值</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;</span>target<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">break</span>
+        <span class="token punctuation">}</span> 
+       
+        <span class="token comment">// 将满足小于target的值，放入新的数组</span>
+        goodNums<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+         <span class="token comment">// 遍历判断 两者之和是否为target</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> t<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> t<span class="token operator">&lt;=</span> goodNums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> t<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">var</span> res <span class="token operator">=</span> target <span class="token operator">-</span> nums<span class="token punctuation">[</span>t<span class="token punctuation">]</span> 
+                <span class="token keyword">if</span><span class="token punctuation">(</span>goodNums<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                  firstVal <span class="token operator">=</span> nums<span class="token punctuation">[</span>t<span class="token punctuation">]</span>
+                    <span class="token comment">// 如果 res 在 goodNums 数组中存在，则二者索引可定</span>
+                    <span class="token comment">// 根据索引拿到第二项的值</span>
+                    <span class="token keyword">var</span> tempIndex <span class="token operator">=</span>  goodNums<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+                    secodeVal <span class="token operator">=</span> goodNums<span class="token punctuation">[</span>tempIndex<span class="token punctuation">]</span>                
+                    firstIndex <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>firstVal<span class="token punctuation">)</span>
+                    secodeIndex <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>secodeVal<span class="token punctuation">)</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">[</span>firstIndex<span class="token punctuation">,</span>secodeIndex<span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+                 
+                
+               
+            <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+   
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">twoSum</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span>
+</code></pre></div></div></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"c2e71ead\",\"leetcode_add-two-numbers.md\":\"2fbbcc7e\",\"leetcode_index.md\":\"14de1fb2\",\"leetcode_two-sum.md\":\"344abfe2\"}")</script>
+    <script type="module" async src="/_assets/app.1b48c33f.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+import{e,f as a,s as t}from"./common-7f73fe28.js";const r='{"title":"记录杂七杂八的factors","frontmatter":{},"headers":[{"level":2,"title":"leetcode 算法练习","slug":"leetcode-算法练习"}],"lastUpdated":1593446015092.8}';var o={};const d=t('',2);o.render=function(t,r){return e(),a("div",null,[d])};export default o;export{r as __pageData};

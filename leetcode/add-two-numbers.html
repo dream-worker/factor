@@ -1,0 +1,49 @@
+<html lang="en-US">
+  <head>
+    <title>记录杂七杂八的factors</title>
+    <meta name="description" content="记录杂七杂八的factors">
+    <link rel="stylesheet" href="/_assets/style.04b6c102.css">
+    <link rel="modulepreload" href="/_assets/common-7f73fe28.js">
+    <link rel="modulepreload" href="/_assets/leetcode_add-two-numbers.md.2fbbcc7e.lean.js">
+    <link rel="modulepreload" href="/_assets/app.1b48c33f.js">
+    
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header><!--[--><a class="title" aria-label="记录杂七杂八的factors, back to home" href="/"><!----><span>记录杂七杂八的factors</span></a><!----><!--]--></header><aside><div class="sidebar"><ul><!--[--><!--]--></ul></div></aside><main><div class="content"><div><ol start="2"><li>两数相加</li></ol><p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p><p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p><p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p><p>来源：力扣（LeetCode） 链接：<a href="https://leetcode-cn.com/problems/add-two-numbers" target="_blank" rel="noopener noreferrer">https://leetcode-cn.com/problems/add-two-numbers</a> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p><div class="language-js"><pre><code><span class="token comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */</span>
+<span class="token comment">/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */</span>
+<span class="token comment">// l1 和 l2 都是逆序方式存储的</span>
+<span class="token keyword">var</span> l1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> l2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> asc1 <span class="token punctuation">,</span> asc2<span class="token punctuation">,</span> l3<span class="token punctuation">,</span> asc3
+<span class="token keyword">var</span> <span class="token function-variable function">addTwoNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">l1<span class="token punctuation">,</span> l2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// l1 和 l2 元数据为正序数字</span>
+    asc1 <span class="token operator">=</span> l1<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&#39;&#39;</span><span class="token punctuation">)</span>
+    asc2 <span class="token operator">=</span> l2<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&#39;&#39;</span><span class="token punctuation">)</span>
+    <span class="token comment">// 两数相加之和，为所求值数字类型正序 l3</span>
+    l3 <span class="token operator">=</span>  <span class="token punctuation">(</span> <span class="token function">Number</span><span class="token punctuation">(</span>asc1<span class="token punctuation">)</span> <span class="token operator">+</span>  <span class="token function">Number</span><span class="token punctuation">(</span>asc2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// 结果值转为数组且倒序</span>
+    asc3 <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span>l3<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&#39;&#39;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> asc3 <span class="token punctuation">)</span>
+    <span class="token keyword">return</span> asc3
+  
+  
+
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">addTwoNumbers</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span>l2<span class="token punctuation">)</span>
+</code></pre></div></div></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"c2e71ead\",\"leetcode_add-two-numbers.md\":\"2fbbcc7e\",\"leetcode_index.md\":\"14de1fb2\",\"leetcode_two-sum.md\":\"344abfe2\"}")</script>
+    <script type="module" async src="/_assets/app.1b48c33f.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+import{e as n,f as s,s as a}from"./common-7f73fe28.js";const p='{"title":"","frontmatter":{},"lastUpdated":1593444721248.737}';var t={};const o=a('',8);t.render=function(a,p){return n(),s("div",null,[o])};export default t;export{p as __pageData};
